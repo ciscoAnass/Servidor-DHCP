@@ -74,7 +74,7 @@ apt update
 <img src="/img/pingc.png" alt="red servidor" width="500" />
 
 
-- Ahora editamos el archivo de configuración de red en el cliente, ubicado en '/etc/network/interfaces', y configuramos la interfaz 'enp0s3' en modo DHCP.
+- Ahora editamos el archivo de configuración de red en el cliente, ubicado en **'/etc/network/interfaces'** , y configuramos la interfaz **'enp0s3'** en modo DHCP.
 
   <img src="/img/dhcpclient.png" alt="Red Cliente DHCP" width="500" />
 
@@ -83,7 +83,7 @@ apt update
 
 ### /etc/default/isc-dhcp-server
 
-- Editamos el archivo '/etc/default/isc-dhcp-server' para configurar la tarjeta que escuchará las peticiones del cliente, que en este caso será 'enp0s3'.
+- Editamos el archivo **'/etc/default/isc-dhcp-server'** para configurar la tarjeta que escuchará las peticiones del cliente, que en este caso será **'enp0s3'** .
   
     <img src="/img/defaultserver.png" alt="red Cliente" width="500" />
 
@@ -93,7 +93,7 @@ apt update
 
     <img src="/img/dhcpserver.png" alt="red Cliente" width="500" />
 
-- Ahora tenemos que reninciar el Servicio DHCP :
+- Ahora tenemos que reninciar el Servicio **DHCP** :
 
 ```bash
 systemctl restart isc-dhcp-server
@@ -108,27 +108,28 @@ systemctl status isc-dhcp-server
 
 
 ***
-## Configuracion de la maquina Failover :
+## Configuracion de la maquina **Failover** :
 
 ### /etc/default/isc-dhcp-server
 
 - Al igual que en el servidor, tenemos que editar el archivo '/etc/default/isc-dhcp-server' para configurar la tarjeta que escuchará las peticiones del cliente, que en este caso será 'enp0s3'.
-    <img src="/img/defaultf.png" alt="red Cliente" width="500" />
+
+  <img src="/img/defaultf.png" alt="red Cliente" width="500" />
 
 ### /etc/dhcp/dhcpd.conf
 
-- Ahora configuramos el servicio dhcp en el Failover :
+- Ahora configuramos el servicio dhcp en el **Failover** :
 
     <img src="/img/dhcpfail.png" alt="red Cliente" width="500" />
 
-- Ahora tenemos que reninciar el Servicio DHCP :
+- Ahora tenemos que reninciar el Servicio **DHCP** :
 
 ```bash
 systemctl restart isc-dhcp-server
 systemctl status isc-dhcp-server
 ```
 
-- Ahora el Servicio suele ser Activo
+- Ahora el Servicio debería estar Activo
 
 <img src="/img/systemctlfail.png" alt="red Cliente" width="500" />
 
@@ -137,7 +138,7 @@ systemctl status isc-dhcp-server
 
 ### Habilitar el Forwading :
 
-- Editamos el archivo '/proc/sys/net/ipv4/ip_forward' para permitir el reenvío de paquetes entre las interfaces de red:
+- Editamos el archivo **'/proc/sys/net/ipv4/ip_forward'** para permitir el reenvío de paquetes entre las interfaces de red:
 
 ```bash
 echo '1' > /proc/sys/net/ipv4/ip_forward
@@ -146,7 +147,7 @@ echo '1' > /proc/sys/net/ipv4/ip_forward
 <img src="/img/echo1.png" alt="red Cliente" width="500" />
 
 
-- Para que este cambio sea persistente tras reiniciar, edita el archivo '/etc/sysctl.conf' y agrega la siguiente línea : 
+- Para que este cambio sea persistente tras reiniciar, edita el archivo **'/etc/sysctl.conf'** y agrega la siguiente línea : 
 
 ```bash
 echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
@@ -157,7 +158,7 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
 
 ##  /etc/default/isc-dhcp-relay
 
-- En este fichero tenemos que agregar la IP del servidor y el Failover y poner las dos tarjetas  que se conectan al cliente y al servidor y el failover que normalmente por virtualbox son por defecto : “enp0s3” y “enp0s8”
+- En este fichero tenemos que agregar la IP del servidor y el Failover y poner las dos tarjetas  que se conectan al cliente y al servidor y el failover que normalmente por virtualbox son por defecto : **“enp0s3” y “enp0s8”**
 
 <img src="/img/defaultrelay.png" alt="red Cliente" width="500" />
 
@@ -171,8 +172,8 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
 ### Parte 1 : Comprobación del Servidor
 
 - Hemos terminado de configurar todas las máquinas (Servidor, RELAY, FAILOVER). Ahora toca comprobar si el DHCP funciona bien y si el cliente puede obtener una IP dinámica del servidor.
-- 
-<img src="/img/dhcpcomp1.png" alt="red Cliente" width="500" />
+  
+<img src="/img/dhcpcomp1.png" alt="red Cliente" />
 
 
 ### Parte 2 : Comprobación del FAILOVER
@@ -183,4 +184,4 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
 systemctl stop isc-dhcp-server # En la Maquina Servidor
 ```
 
- <img src="/img/dhcpcomp2.png" alt="red Cliente" width="500" />
+ <img src="/img/dhcpcomp2.png" alt="red Cliente"  />
