@@ -63,8 +63,16 @@ apt update
 ```
 
 ***
+## Comprobacion de connectividad :
+
+- Para comprobar la Connectividad entre el cliente con el Servidor , normalmente hacemos un Ping del Cliente al servidor o del Servidor al Cliente :
+
+  
+<img src="/img/pingc.png" alt="red servidor" width="500" />
 
 
+- Y Ahora editamos el ficher de configuracion Red en el cliente '/etc/network/interfaces' y ponemos la interfaz 'enp0s3' por modo dhcp :
 
+  <img src="/img/ipc2.png" alt="red Cliente" width="500" />
 
 
