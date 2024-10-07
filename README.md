@@ -1,39 +1,28 @@
-# 🌐 Guía Básica de DHCP, Relay y Failover
+# Configuración de DHCP: Servidor, Failover, Relay y Cliente
 
-## 🧩 ¿Qué es DHCP?
+![Diagrama DHCP](https://www.bt-pon.com/wp-content/uploads/2021/12/image-1.png)
 
-El **Protocolo de Configuración Dinámica de Host** (DHCP) permite que los dispositivos obtengan una dirección IP automáticamente cuando se conectan a una red, eliminando la necesidad de configuraciones manuales.
+Este repositorio contiene información y guías sobre la configuración de DHCP (Dynamic Host Configuration Protocol).
 
-### Que es Relay  ? 
+## ¿Qué es DHCP?
 
-El **Relay** actúa como intermediario, reenviando las solicitudes del cliente al servidor DHCP cuando están en redes distintas, asegurando que el cliente reciba su configuración de red.
+DHCP asigna automáticamente direcciones IP y otros parámetros de red a los dispositivos.
 
-### Que es Failover  ?
+## Componentes principales
 
-El **Failover** garantiza alta disponibilidad. Si el servidor DHCP principal falla, un servidor de respaldo toma el control, asegurando que la red siga operativa.
+1. **Servidor DHCP**: Asigna y administra direcciones IP.
+2. **Failover DHCP**: Proporciona redundancia para el servicio DHCP.
+3. **Relay DHCP**: Reenvía solicitudes DHCP entre subredes.
+4. **Cliente DHCP**: Solicita y recibe configuración de red.
 
----
+## Guía de configuración
 
-## ⚙️ Configuración de red
+Para instrucciones detalladas, consulte : **[Guía paso a paso](guia.md).**
 
-La red se configura con cuatro máquinas Debian, cada una con un rol específico:
+## Autor
 
-1. **Cliente (Debian 1)**: IP: `192.168.1.10/24`
-2. **Relay/Router (Debian 2)**: IP Cliente: `192.168.1.1/24`, IP Servidor: `192.168.2.1/24`
-3. **Servidor DHCP (Debian 3)**: IP: `192.168.2.10/24`
-4. **Failover (Debian 4)**: IP: `192.168.2.9/24`
+[Anass Assim](@CiscoAnass)
 
----
+## Licencia
 
-## 🔗 Ver configuración
-
-- [Servidor](servidor.md)
-- [Failover](failover.md)
-- [Relay](relay.md)
-- [Cliente](cliente.md)
-
-***
-
-
-**Autor**: Anass Assim  
-**Licencia**: Libre  
+Proyecto bajo licencia gratuita.
