@@ -132,7 +132,7 @@ systemctl status isc-dhcp-server
 
 - Ahora el Servicio suele ser Activo
 
-<img src="/img/systemctlserver.png" alt="red Cliente" width="500" />
+<img src="/img/systemctlfail.png" alt="red Cliente" width="500" />
 
 ***
 ## Configuracion de la maquina RELAY :
