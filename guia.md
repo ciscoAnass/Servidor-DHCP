@@ -31,3 +31,32 @@ RELAY :
 CLIENTE :
 <img src="/img/ipc.png" alt="red Cliente" width="500" />
 
+***
+
+## Instalamos Los paquetes necesarios por cada maquina :
+
+
+**Servidor :**
+```bash
+apt update
+apt install isc-dhcp-server
+```
+
+**Failover :**
+```bash
+apt update
+apt install isc-dhcp-server
+```
+
+**Relay :**
+```bash
+apt update
+apt install isc-dhcp-relay
+```
+
+**Cliente :**
+- En el CLiente no hace falta intalar ningun paquete pero es recomendable actualizar el repositorio
+
+```bash
+apt update
+```
