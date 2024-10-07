@@ -101,8 +101,37 @@ systemctl status isc-dhcp-server
 
 <img src="/img/systemctlserver.png" alt="red Cliente" width="500" />
 
-***
 
+
+
+***
+## Configuracion de la maquina Failover :
+
+### /etc/default/isc-dhcp-server
+
+- Igual al Servidor tenemos ue editar al fichero '/etc/default/isc-dhcp-server' , para configurar la tarjeta que va a escuchar las peticiones del cliente, en este caso seria 'enp0s3'.
+
+    <img src="/img/defaultfailover.png" alt="red Cliente" width="500" />
+
+### /etc/dhcp/dhcpd.conf
+
+- Ahora configuramos el servicio dhcp en el Failover :
+
+    <img src="/img/dhcpfail.png" alt="red Cliente" width="500" />
+
+- Ahora tenemos que reninciar el Servicio DHCP :
+
+```bash
+systemctl restart isc-dhcp-server
+systemctl status isc-dhcp-server
+```
+
+- Ahora el Servicio suele ser Activo
+
+<img src="/img/systemctlserver.png" alt="red Cliente" width="500" />
+
+***
+## Configuracion de la maquina RELAY :
 
 
 
