@@ -17,11 +17,11 @@ DHCP asigna automáticamente direcciones IP y otros parámetros de red a los dis
 
 ## Guía de configuración
 
-Para instrucciones detalladas, consulte : **[Guía paso a paso](guia.md).**
+Para instrucciones detalladas, consulte : **[Guía paso a paso](guia.md)**
 
 ## Autor
 
-[Anass Assim](@CiscoAnass)
+**[Anass Assim](@CiscoAnass)**
 
 ## Licencia
 
