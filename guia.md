@@ -20,15 +20,19 @@ Asumimos la siguiente configuración de red:
 - Vamos a asignar las Ip's A las Maquinas :
 
 Servidor :
+
 <img src="/img/ips.png" alt="red servidor" width="500" />
 
 FAILOVER :
+
 <img src="/img/ipf.png" alt="red Failover" width="500" />
 
 RELAY :
+
 <img src="/img/ipr.png" alt="red Relay" width="500" />
 
 CLIENTE :
+
 <img src="/img/ipc.png" alt="red Cliente" width="500" />
 
 ***
