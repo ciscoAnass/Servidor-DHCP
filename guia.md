@@ -166,14 +166,21 @@ echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
 
 ***
 
-## Comprobacion de DHCP 
+## Comprobación de DHCP
 
-### Parte 1 : COmprobacion Del Servidor
-- Hemos terminado de configurar todas las maquinas (Servidor , RELAY , FAILOVER) . ahora toca a comprobar si el DHCP funciona bien , y si el Cliente Puede coger una IP Dinamica del Servidor .
+### Parte 1 : Comprobación del Servidor
 
-
-### Parte 2 : COmprobacion del FAILOVER
-
-- Despues la Comprobacion de que si el Cliente si va a tomar una IP Dinamica del Servidor y sale bien , pues ahora podemos apagar el servidor o paramos el Servicio 'isc-dhcp-server' y Comrpobamos si el CLiente puede tomar una Ip Dinamica de la maquina FAILOVER :
-
+- Hemos terminado de configurar todas las máquinas (Servidor, RELAY, FAILOVER). Ahora toca comprobar si el DHCP funciona bien y si el cliente puede obtener una IP dinámica del servidor.
 - 
+<img src="/img/dhcpcomp1.png" alt="red Cliente" width="500" />
+
+
+### Parte 2 : Comprobación del FAILOVER
+
+- Después de comprobar que el cliente puede obtener una IP dinámica del servidor y todo funciona correctamente, podemos apagar el servidor o detener el servicio 'isc-dhcp-server' para verificar si el cliente puede obtener una IP dinámica de la máquina FAILOVER.
+
+```bash
+systemctl stop isc-dhcp-server # En la Maquina Servidor
+```
+
+ <img src="/img/dhcpcomp2.png" alt="red Cliente" width="500" />
