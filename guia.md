@@ -77,7 +77,7 @@ apt update
 
 - Y Ahora editamos el ficher de configuracion Red en el cliente '/etc/network/interfaces' y ponemos la interfaz 'enp0s3' por modo dhcp :
 
-  <img src="/img/ipc2.png" alt="red Cliente" width="500" />
+  <img src="/img/dhcpclient.png" alt="Red Cliente DHCP" width="500" />
 
 ***
 ## Configuracion de la maquina Server :
