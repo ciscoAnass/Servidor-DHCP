@@ -115,7 +115,7 @@ systemctl status isc-dhcp-server
 
 - Igual al Servidor tenemos ue editar al fichero '/etc/default/isc-dhcp-server' , para configurar la tarjeta que va a escuchar las peticiones del cliente, en este caso seria 'enp0s3'.
 
-    <img src="/img/defaultfailover.png" alt="red Cliente" width="500" />
+    <img src="/img/defaultf.png" alt="red Cliente" width="500" />
 
 ### /etc/dhcp/dhcpd.conf
 
