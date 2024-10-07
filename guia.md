@@ -55,8 +55,16 @@ apt install isc-dhcp-relay
 ```
 
 **Cliente :**
-- En el CLiente no hace falta intalar ningun paquete pero es recomendable actualizar el repositorio
+
+- En el Cliente no hace falta intalar ningun paquete pero es recomendable actualizar el repositorio
 
 ```bash
 apt update
 ```
+
+***
+
+
+
+
+
