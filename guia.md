@@ -17,7 +17,7 @@ Asumimos la siguiente configuración de red:
 
 
 ***
-- Vamos a asignar las Ip's A las Maquinas :
+- Vamos a asignar las Ip's a las Máquinas :
 
 Servidor :
 
@@ -37,7 +37,7 @@ CLIENTE :
 
 ***
 
-## Instalamos Los paquetes necesarios por cada maquina :
+## Instalamos los paquetes necesarios en cada Máquina :
 
 
 **Servidor :**
@@ -60,7 +60,7 @@ apt install isc-dhcp-relay
 
 **Cliente :**
 
-- En el Cliente no hace falta intalar ningun paquete pero es recomendable actualizar el repositorio
+- En el cliente no hace falta instalar ningún paquete, pero es recomendable actualizar el repositorio.
 
 ```bash
 apt update
@@ -69,13 +69,12 @@ apt update
 ***
 ## Comprobacion de connectividad :
 
-- Para comprobar la Connectividad entre el cliente con el Servidor , normalmente hacemos un Ping del Cliente al servidor o del Servidor al Cliente :
-
+- Para comprobar la conectividad entre el cliente y el servidor, normalmente hacemos un ping desde el cliente al servidor o desde el servidor al cliente.
   
 <img src="/img/pingc.png" alt="red servidor" width="500" />
 
 
-- Y Ahora editamos el ficher de configuracion Red en el cliente '/etc/network/interfaces' y ponemos la interfaz 'enp0s3' por modo dhcp :
+- Ahora editamos el archivo de configuración de red en el cliente, ubicado en '/etc/network/interfaces', y configuramos la interfaz 'enp0s3' en modo DHCP.
 
   <img src="/img/dhcpclient.png" alt="Red Cliente DHCP" width="500" />
 
@@ -84,13 +83,13 @@ apt update
 
 ### /etc/default/isc-dhcp-server
 
-- Editamos el fichero '/etc/default/isc-dhcp-server' , para configurar la tarjeta que va a escuchar las peticiones del cliente, en este caso seria 'enp0s3'.
-
+- Editamos el archivo '/etc/default/isc-dhcp-server' para configurar la tarjeta que escuchará las peticiones del cliente, que en este caso será 'enp0s3'.
+  
     <img src="/img/defaultserver.png" alt="red Cliente" width="500" />
 
 ### /etc/dhcp/dhcpd.conf
 
-- Ahora configuramos el servicio dhcp en el Servidor :
+- Ahora configuramos el servicio **DHCP** en el Servidor :
 
     <img src="/img/dhcpserver.png" alt="red Cliente" width="500" />
 
@@ -101,7 +100,7 @@ systemctl restart isc-dhcp-server
 systemctl status isc-dhcp-server
 ```
 
-- Ahora el Servicio suele ser Activo
+- Ahora el Servicio debería estar Activo
 
 <img src="/img/systemctlserver.png" alt="red Cliente" width="500" />
 
@@ -113,8 +112,7 @@ systemctl status isc-dhcp-server
 
 ### /etc/default/isc-dhcp-server
 
-- Igual al Servidor tenemos ue editar al fichero '/etc/default/isc-dhcp-server' , para configurar la tarjeta que va a escuchar las peticiones del cliente, en este caso seria 'enp0s3'.
-
+- Al igual que en el servidor, tenemos que editar el archivo '/etc/default/isc-dhcp-server' para configurar la tarjeta que escuchará las peticiones del cliente, que en este caso será 'enp0s3'.
     <img src="/img/defaultf.png" alt="red Cliente" width="500" />
 
 ### /etc/dhcp/dhcpd.conf
