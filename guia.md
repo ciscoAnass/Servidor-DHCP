@@ -17,7 +17,7 @@ Asumimos la siguiente configuración de red:
 
 
 ***
-- Vamos a asignar las Ip's a las Máquinas :
+- Vamos a asignar las Ip's a las Máquinas a traves del fichero **'/etc/network/interfaces'** :
 
 Servidor :
 
