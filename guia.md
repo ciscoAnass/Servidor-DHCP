@@ -133,6 +133,35 @@ systemctl status isc-dhcp-server
 ***
 ## Configuracion de la maquina RELAY :
 
+### Habilitar el Forwading :
+
+- Editamos el archivo '/proc/sys/net/ipv4/ip_forward' para permitir el reenvío de paquetes entre las interfaces de red:
+
+```bash
+echo '1' > /proc/sys/net/ipv4/ip_forward
+```
+
+<img src="/img/echo1.png" alt="red Cliente" width="500" />
+
+
+- Para que este cambio sea persistente tras reiniciar, edita el archivo '/etc/sysctl.conf' y agrega la siguiente línea : 
+
+```bash
+echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
+```
+
+<img src="/img/sysctl.png" alt="red Cliente" width="500" />
+
+
+##  /etc/default/isc-dhcp-relay
+
+- En este fichero tenemos que agregar la IP del servidor y el Failover y poner las dos tarjetas  que se conectan al cliente y al servidor y el failover que normalmente por virtualbox son por defecto : “enp0s3” y “enp0s8”
+
+<img src="/img/defaultrelay.png" alt="red Cliente" width="500" />
+
+
+
+
 
 
 
